@@ -33,8 +33,7 @@ mod tests {
     #[test]
     fn test_iterate_string_vec() {
         let words = vec!["hello", "world"];
-        let capitalized_words: Vec<String> =
-            words
+        let capitalized_words: Vec<String> = words
             .iter()
             .map(|x| capitalize_first(x))
             .collect::<Vec<String>>();
@@ -45,8 +44,7 @@ mod tests {
     #[test]
     fn test_iterate_into_string() {
         let words = vec!["hello", " ", "world"];
-        let capitalized_words =
-            words
+        let capitalized_words = words
             .iter()
             .map(|x| capitalize_first(x))
             .collect::<String>();

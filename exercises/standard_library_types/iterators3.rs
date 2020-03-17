@@ -31,7 +31,10 @@ pub fn divide(a: i32, b: i32) -> Result<i32, DivisionError> {
         if c == 0 {
             Ok(a / b)
         } else {
-            let e = NotDivisibleError { dividend: a, divisor: b };
+            let e = NotDivisibleError {
+                dividend: a,
+                divisor: b,
+            };
             Err(DivisionError::NotDivisible(e))
         }
     }
@@ -74,9 +77,9 @@ mod tests {
     fn result_with_list() {
         let numbers = vec![27, 297, 38502, 81];
         let division_results = numbers
-                .into_iter()
-                .map(|n| divide(n, 27))
-                .collect::<Result<Vec<_>, _>>();
+            .into_iter()
+            .map(|n| divide(n, 27))
+            .collect::<Result<Vec<_>, _>>();
 
         let x = division_results;
         assert_eq!(format!("{:?}", x), "Ok([1, 11, 1426, 3])");
@@ -87,12 +90,11 @@ mod tests {
         let numbers = vec![27, 297, 38502, 81];
 
         let division_results = numbers
-                .into_iter()
-                .map(|n| divide(n, 27))
-                .collect::<Vec<_>>();
+            .into_iter()
+            .map(|n| divide(n, 27))
+            .collect::<Vec<_>>();
 
         let x = division_results;
         assert_eq!(format!("{:?}", x), "[Ok(1), Ok(11), Ok(1426), Ok(3)]");
     }
-
 }

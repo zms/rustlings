@@ -18,7 +18,10 @@ mod tests {
     #[test]
     fn classic_c_structs() {
         // TODO: Instantiate a classic c struct!
-        let green = ColorClassicStruct{name: String::from("green"), hex: String::from("#00FF00")};
+        let green = ColorClassicStruct {
+            name: String::from("green"),
+            hex: String::from("#00FF00"),
+        };
 
         assert_eq!(green.name, "green");
         assert_eq!(green.hex, "#00FF00");
@@ -36,7 +39,7 @@ mod tests {
     #[test]
     fn unit_structs() {
         // TODO: Instantiate a unit struct!
-        let unit_struct = UnitStruct{};
+        let unit_struct = UnitStruct {};
         let message = format!("{:?}s are fun!", unit_struct);
 
         assert_eq!(message, "UnitStructs are fun!");
